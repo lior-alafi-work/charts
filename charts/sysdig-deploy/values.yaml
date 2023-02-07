@@ -24,6 +24,14 @@ agent:
 
 nodeAnalyzer:
   enabled: true
+  nodeAnalyzer:
+    kspmAnalyzer:
+      image:
+        tag: 1.17.6-rc
+ 
+kspmCollector:
+  image:
+    tag: 1.17.6-rc
 
 rapidResponse:
   enabled: false
