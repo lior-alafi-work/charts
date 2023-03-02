@@ -114,7 +114,7 @@ spec:
           {{- end }}
           {{- if include "agent.printCA" . }}
             - name: SSL_CERT_FILE
-              value: /ca-certs/{{ include "agent.sslCaFileName" . }}
+              value: /opt/draios/etc/ca-certs/{{ include "agent.sslCaFileName" . }}
           {{- end }}
           volumeMounts:
             - mountPath: /etc/modprobe.d
@@ -146,7 +146,7 @@ spec:
               readOnly: true
             {{- end }}
             {{- if include "agent.printCA" . }}
-            - mountPath: /ca-certs
+            - mountPath: /opt/draios/etc/ca-certs
               name: ca-cert
             {{- end }}
       {{- end }}
@@ -196,7 +196,7 @@ spec:
             {{- end }}
             {{- if and (.Values.slim.enabled) (include "agent.printCA" .) }}
             - name: SSL_CERT_FILE
-              value: /ca-certs/{{ include "agent.sslCaFileName" . }}
+              value: /opt/draios/etc/ca-certs/{{ include "agent.sslCaFileName" . }}
             {{- end }}
           readinessProbe:
             exec:
@@ -259,7 +259,7 @@ spec:
             - mountPath: /etc/podinfo
               name: podinfo
             {{- if include "agent.printCA" . }}
-            - mountPath: /ca-certs
+            - mountPath: /opt/draios/etc/ca-certs
               name: ca-cert
             {{- end }}
       volumes:
