@@ -292,7 +292,7 @@ in [Kubernetes Documentation](https://kubernetes.io/docs/tasks/configure-pod-con
 The Sysdig agent uses a file called `dragent.yaml` to store the configuration.
 
 Using the Helm chart, the default configuration settings can be updated using `sysdig.settings` either
-via `--set sysdig.settings.key = value` or in the values YAML file. For example, to eanble Prometheus metrics scraping,
+via `--set sysdig.settings.key = value` or in the values YAML file. For example, to enable Prometheus metrics scraping,
 you need this in your `values.yaml` file::
 
 ```yaml
