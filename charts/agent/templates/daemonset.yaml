@@ -148,6 +148,7 @@ spec:
             {{- if include "agent.printCA" . }}
             - mountPath: /opt/draios/etc/ca-certs
               name: ca-cert
+              readOnly: true
             {{- end }}
       {{- end }}
       containers:
@@ -261,6 +262,7 @@ spec:
             {{- if include "agent.printCA" . }}
             - mountPath: /opt/draios/etc/ca-certs
               name: ca-cert
+              readOnly: true
             {{- end }}
       volumes:
         - name: modprobe-d
