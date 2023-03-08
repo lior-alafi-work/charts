@@ -244,6 +244,7 @@ spec:
           {{- if include "nodeAnalyzer.printCA" . }}
           - mountPath: /ca-certs
             name: ca-cert
+            readOnly: true
           {{- end }}
       # kspm-analyzer
       {{- end }}
@@ -272,6 +273,7 @@ spec:
           {{- if include "nodeAnalyzer.printCA" . }}
           - mountPath: /ca-certs
             name: ca-cert
+            readOnly: true
           {{- end }}
           # Custom volume mount here
           {{- if .Values.nodeAnalyzer.imageAnalyzer.extraVolumes.mounts }}
@@ -406,6 +408,7 @@ spec:
           {{- if include "nodeAnalyzer.printCA" . }}
           - mountPath: /ca-certs
             name: ca-cert
+            readOnly: true
           {{- end }}
         env:
         - name: ACCESS_KEY
@@ -516,6 +519,7 @@ spec:
           {{- if include "nodeAnalyzer.printCA" . }}
           - mountPath: /ca-certs
             name: ca-cert
+            readOnly: true
           {{- end }}
         env:
         - name: ACCESS_KEY
@@ -714,6 +718,7 @@ spec:
           {{- if include "nodeAnalyzer.printCA" . }}
           - mountPath: /ca-certs
             name: ca-cert
+            readOnly: true
           {{- end }}
           {{- if .Values.nodeAnalyzer.runtimeScanner.extraMounts }}
 {{ toYaml .Values.nodeAnalyzer.runtimeScanner.extraMounts | indent 10 }}
@@ -850,6 +855,7 @@ spec:
           {{- if include "nodeAnalyzer.printCA" . }}
           - mountPath: /ca-certs
             name: ca-cert
+            readOnly: true
           {{- end }}
           {{- if .Values.nodeAnalyzer.hostScanner.extraMounts }}
 {{ toYaml .Values.nodeAnalyzer.hostScanner.extraMounts | indent 10 }}
