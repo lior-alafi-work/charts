@@ -69,11 +69,11 @@ Currently included components:
       helm install sysdig-agent --namespace sysdig-agent \
       --set global.sysdig.accessKey=<ACCESS_KEY> \
       --set global.sysdig.region=<SAAS_REGION> \
-      --set nodeAnalyzer.secure.vulnerabilityManagement.newEngineOnly=true \
-      --set global.kspm.deploy=true \
-      --set nodeAnalyzer.nodeAnalyzer.benchmarkRunner.deploy=false \
       --set global.clusterConfig.name=<CLUSTER_NAME> \
-      --set agent.gke.autopilot=true \
+      --set global.kspm.deploy=false \
+      --set global.gke.autopilot=true \
+      --set nodeAnalyzer.enabled=false \
+      --set agent.slim.enabled=false \
       sysdig/sysdig-deploy
       ```
 
